@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
+    android:background="@color/app_background" android:paddingStart="24dp" android:paddingTop="28dp" android:paddingEnd="24dp">
+    <TextView android:id="@+id/tv_title" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:textColor="@color/primary_orange" android:textSize="19sp" android:textStyle="bold"/>
+    <TextView android:id="@+id/tv_heading" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="24dp" android:textColor="@color/text_primary" android:textSize="23sp" android:textStyle="bold"/>
+    <TextView android:id="@+id/tv_subtitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+    <EditText android:id="@+id/et_search" android:layout_width="match_parent" android:layout_height="44dp"
+        android:layout_marginTop="18dp" android:background="@drawable/bg_input" android:hint="Cari"
+        android:paddingHorizontal="16dp" android:singleLine="true" android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/btn_add" android:layout_width="match_parent"
+        android:layout_height="44dp" android:layout_marginTop="12dp" android:textAllCaps="false" android:textColor="@color/white"
+        app:backgroundTint="@color/primary_orange" app:cornerRadius="12dp"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="14dp"
+        android:clipToPadding="false" android:paddingBottom="20dp">
+        <LinearLayout android:id="@+id/list_content" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+    </ScrollView>
+</LinearLayout>

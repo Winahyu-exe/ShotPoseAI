@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:paddingStart="24dp" android:paddingTop="30dp" android:paddingEnd="24dp" android:paddingBottom="28dp" android:background="@drawable/bg_card">
+    <ImageView android:layout_width="76dp" android:layout_height="76dp" android:background="@drawable/bg_delete_icon_circle" android:padding="22dp" android:src="@drawable/ic_delete" android:contentDescription="Hapus" android:elevation="4dp"/>
+    <TextView android:id="@+id/tv_confirm_message" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:gravity="center" android:textColor="@color/text_primary" android:textSize="18sp" android:textStyle="bold" android:lineSpacingExtra="2dp"/>
+    <TextView android:id="@+id/btn_confirm" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="26dp" android:background="@drawable/bg_delete_button" android:gravity="center" android:text="Hapus" android:textColor="@color/white" android:textSize="16sp" android:elevation="3dp"/>
+</LinearLayout>

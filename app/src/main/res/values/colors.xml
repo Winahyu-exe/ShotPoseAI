@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="bg_dark">#EAF8FA</color>
+    <color name="bg_splash">#FFF0EC</color>
+    <color name="app_background">#FFF9F9</color>
+    <color name="bg_surface">#FFFFFF</color>
+    <color name="card_dark">#FFFFFF</color>
+    <color name="card_soft">#F7FEFF</color>
+    <color name="border_dark">#D9E9EE</color>
+
+    <color name="primary_orange">#FF5722</color>
+    <color name="primary_orange_dark">#B53E18</color>
+    <color name="primary_orange_soft">#FFEEE9</color>
+    <color name="sport_blue">#00A8C8</color>
+    <color name="sport_green">#16A34A</color>
+    <color name="sport_yellow">#F59E0B</color>
+    <color name="danger_red">#EF4444</color>
+
+    <color name="neon_green">#16A34A</color>
+    <color name="neon_green_dark">#15803D</color>
+
+    <color name="text_primary">#191E28</color>
+    <color name="text_secondary">#575F6D</color>
+    <color name="text_hint">#8BA1AA</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="disabled_gray">#AEBBC1</color>
+    <color name="info_blue">#3B82F6</color>
+    <color name="info_blue_dark">#2A5CAF</color>
+    <color name="success_soft">#E7F8F2</color>
+    <color name="danger_soft">#FDECEC</color>
+    <color name="warning_soft">#FFF2DC</color>
+</resources>

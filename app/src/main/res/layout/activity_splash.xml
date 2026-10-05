@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_orange_soft"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".ui.splash.SplashActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="24dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:id="@+id/splash_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- The existing logo has transparent margins. This viewport shows
+                 its original orange rounded square without a second background. -->
+            <FrameLayout
+                android:layout_width="184dp"
+                android:layout_height="184dp"
+                android:clipChildren="true">
+
+                <ImageView
+                    android:layout_width="268dp"
+                    android:layout_height="268dp"
+                    android:layout_gravity="center"
+                    android:translationX="-4dp"
+                    android:contentDescription="@string/splash_app_title"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_soccer_ball" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/splash_app_title"
+                android:textColor="@color/primary_orange"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/splash_developer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/splash_content"
+            app:layout_constraintVertical_bias="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/splash_developer_credit"
+                android:textColor="@color/primary_orange"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:contentDescription="@string/splash_ti_logo_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/splash_logo_ti_hd" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/splash_umk_logo_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/splash_logo_umk_hd" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

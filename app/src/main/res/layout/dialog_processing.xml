@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_card" android:gravity="center_horizontal" android:orientation="vertical" android:paddingStart="24dp" android:paddingTop="30dp" android:paddingEnd="24dp" android:paddingBottom="30dp">
+ <ImageView android:layout_width="76dp" android:layout_height="76dp" android:background="@drawable/bg_cta_orange" android:padding="18dp" android:src="@drawable/ic_soccer_ball" android:contentDescription="Memproses video" android:elevation="4dp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:gravity="center" android:text="Kami menganalisis setiap frame untukmu…" android:textColor="@color/text_primary" android:textSize="18sp" android:textStyle="bold"/>
+ <TextView android:id="@+id/tv_processing" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:gravity="center" android:text="Menyiapkan analisis… 0%" android:textColor="@color/text_secondary" android:textSize="14sp"/>
+ <ProgressBar android:id="@+id/progress_processing" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="24dp" android:max="100" android:progressTint="@color/primary_orange" android:progressBackgroundTint="#C4C8CE"/>
+</LinearLayout>

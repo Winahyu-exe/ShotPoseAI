@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true" android:background="@drawable/bg_app" android:fillViewport="true" android:clipToPadding="false">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/analysis_root"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/bg_app"
+    android:paddingTop="34dp"
+    android:paddingBottom="16dp"
+    tools:context=".ui.analysis.AnalysisActivity">
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="18dp"
+        android:background="@drawable/bg_back_circle"
+        android:contentDescription="Tutup"
+        android:padding="9dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/title_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center"
+        android:orientation="vertical" app:layout_constraintEnd_toStartOf="@id/btn_switch_camera"
+        app:layout_constraintStart_toEndOf="@id/btn_close"
+        app:layout_constraintTop_toTopOf="@id/btn_close">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Analisis Gerakan"
+            android:textColor="@color/primary_orange"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Football movement analysis"
+            android:textColor="@color/text_hint"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_live_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/bg_live_badge"
+        android:paddingStart="11dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="11dp"
+        android:paddingBottom="5dp"
+        android:text="LIVE"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btn_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_close" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_switch_camera"
+        android:layout_width="42dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="↻"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="@color/primary_orange"
+        app:cornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_close"
+        app:layout_constraintEnd_toStartOf="@id/tv_live_badge"
+        app:layout_constraintTop_toTopOf="@id/btn_close" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/header_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="btn_close,title_group,btn_switch_camera,tv_live_badge" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/media_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="22dp"
+        app:cardBackgroundColor="#111827"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:layout_constraintDimensionRatio="4:5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/header_bottom"
+        app:strokeColor="@color/border_dark"
+        app:strokeWidth="1dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/preview_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#111827"
+                app:scaleType="fillCenter" />
+
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/video_frame_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#111827"
+                android:contentDescription="Preview frame video"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <com.shotposeai.ui.analysis.PoseOverlayView
+                android:id="@+id/overlay_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:id="@+id/empty_pose_hint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="28dp"
+                android:paddingTop="30dp"
+                android:paddingEnd="28dp"
+                android:paddingBottom="30dp">
+
+                <ImageView
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:alpha="0.95"
+                    android:contentDescription="Pose hint"
+                    android:src="@drawable/ic_soccer_ball" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Pastikan seluruh tubuh terlihat dan cahaya cukup."
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Posisikan kamera stabil agar skeleton lebih presisi."
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_record_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_live_badge"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="00:30"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/replay_controls"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Tampilkan kontrol video"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:id="@+id/replay_chrome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#22000000">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btn_play_pause"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_analysis_player_button"
+                        android:contentDescription="Putar video"
+                        android:padding="14dp"
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="#99000000"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="10dp">
+
+                        <SeekBar
+                            android:id="@+id/replay_seek"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:contentDescription="Posisi pemutaran video"
+                            android:progressTint="@color/primary_orange"
+                            android:thumbTint="@color/primary_orange" />
+
+                        <TextView
+                            android:id="@+id/tv_replay_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="00:00 / 00:00"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tv_replay_pose"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </FrameLayout>
+            </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_record_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="14dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:text="Berhenti"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:backgroundTint="@color/primary_orange"
+                app:cornerRadius="21dp" />
+
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/result_panel"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="22dp"
+        android:background="@drawable/bg_card"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:paddingStart="15dp"
+        android:paddingTop="13dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/media_card" android:minHeight="212dp" app:layout_constraintVertical_bias="0" app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+            android:text="Menunggu hasil analisis..."
+                android:textColor="@color/text_hint"
+                android:textSize="10.5sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_soft"
+                android:paddingStart="8dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="3dp"
+                android:text="AI Pose"
+                android:textColor="@color/sport_blue"
+                android:textSize="9.5sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_result_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_live_badge"
+            android:paddingStart="12dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="5dp"
+            android:text="MENUNGGU HASIL"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_movement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Pose belum terbaca"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="- / 100"
+            android:textColor="@color/primary_orange"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_detail_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Sudut tubuh dan posisi kaki akan ditampilkan setelah pose terbaca."
+            android:textColor="@color/text_hint"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:lineSpacingExtra="2dp"
+            android:text="Pastikan seluruh tubuh terlihat dan cahaya cukup."
+            android:textColor="@color/text_secondary"
+            android:textSize="11.8sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_result"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minHeight="0dp"
+            android:text="Simpan &amp; Lihat Hasil"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12.5sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primary_orange"
+            app:cornerRadius="10dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true" android:background="@drawable/bg_app" android:fillViewport="true" android:clipToPadding="false">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/bg_app"
+    android:padding="28dp"
+    tools:context=".ui.login.OtpVerificationActivity">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:background="@drawable/bg_back_circle"
+        android:contentDescription="Kembali"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" android:id="@+id/password_form">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="OTP code verification"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="We have an OTP code to your email. Enter the OTP code below to continue."
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/otp_1"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/otp_2"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/otp_3"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/otp_4"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/primary_orange"
+        app:cornerRadius="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/password_form" app:layout_constraintVertical_bias="1" android:layout_marginTop="24dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

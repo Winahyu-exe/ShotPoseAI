@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.ShotPose" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="colorPrimary">@color/primary_orange</item>
+        <item name="colorPrimaryVariant">@color/primary_orange_dark</item>
+        <item name="colorSecondary">@color/sport_blue</item>
+        <item name="colorSurface">@color/bg_surface</item>
+        <item name="android:windowBackground">@color/app_background</item>
+        <item name="android:navigationBarColor">@color/bg_surface</item>
+        <item name="android:statusBarColor">@color/app_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <style name="Theme.ShotPose" parent="Base.Theme.ShotPose" />
+
+    <style name="SportTile" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_width">0dp</item><item name="android:layout_height">88dp</item><item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item><item name="android:background">@drawable/bg_sport_tile</item><item name="android:gravity">center</item>
+        <item name="android:textSize">10sp</item><item name="android:textColor">@color/text_primary</item><item name="android:padding">3dp</item>
+    </style>
+    <style name="SportTileDisabled" parent="SportTile"><item name="android:enabled">false</item><item name="android:alpha">0.48</item></style>
+    <style name="LevelTile" parent="SportTile"><item name="android:layout_height">110dp</item><item name="android:background">@drawable/bg_level_tile</item><item name="android:textSize">12sp</item></style>
+</resources>

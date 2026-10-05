@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ShotPose AI</string>
+    <string name="model_missing_title">Model pose belum tersedia</string>
+    <string name="model_missing_message">Tambahkan file pose_landmarker_lite.task ke folder app/src/main/assets agar deteksi MediaPipe dapat berjalan.</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_app_title">Soccer Pose AI</string>
+    <string name="splash_developer_credit">Developed by TI UMK</string>
+    <string name="splash_ti_logo_description">Logo Teknik Informatika</string>
+    <string name="splash_umk_logo_description">Logo Universitas Muria Kudus</string>
+</resources>

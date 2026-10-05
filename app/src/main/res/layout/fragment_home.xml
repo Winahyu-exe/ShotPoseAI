@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/app_background" android:fillViewport="true" android:clipToPadding="false" android:fitsSystemWindows="true">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="24dp" android:paddingTop="10dp" android:paddingEnd="24dp" android:paddingBottom="18dp">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="45dp" android:gravity="center_vertical"><TextView android:id="@+id/tv_welcome" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="ShotPose AI" android:textColor="@color/primary_orange" android:textSize="23sp" android:textStyle="bold"/><ImageView android:id="@+id/btn_profile" android:layout_width="45dp" android:layout_height="45dp" android:background="@drawable/bg_avatar_placeholder" android:padding="10dp" android:src="@drawable/ic_user" android:contentDescription="Buka profil guru" android:clickable="true" android:focusable="true"/></LinearLayout>
+  <LinearLayout android:layout_width="match_parent" android:layout_height="165dp" android:layout_marginTop="24dp" android:background="@drawable/bg_progress_dark" android:orientation="vertical" android:paddingStart="16dp" android:paddingTop="22dp" android:paddingEnd="16dp" android:paddingBottom="16dp">
+   <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SOCCER PROGRESS" android:textColor="#EAEBED" android:textSize="10sp" android:letterSpacing="0.1"/>
+   <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Dribble Challenge" android:textColor="#EAEBED" android:textSize="19sp" android:textStyle="bold"/>
+   <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Selesaikan pembelajaran tantangan menggiring bola" android:textColor="#EAEBED" android:textSize="12sp"/>
+   <ProgressBar android:id="@+id/progress_badge" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="16dp" android:max="100" android:progress="0" android:progressTint="@color/primary_orange" android:progressBackgroundTint="#EAEBED"/>
+   <TextView android:id="@+id/tv_progress" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:gravity="center" android:textColor="#EAEBED" android:textSize="12sp"/>
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="90dp"
+      android:layout_marginTop="16dp"
+      android:clipChildren="false"
+      android:clipToPadding="false"
+      android:orientation="horizontal">
+
+   <FrameLayout
+       android:layout_width="0dp"
+       android:layout_height="90dp"
+       android:layout_weight="1"
+       android:clipChildren="false"
+       android:clipToPadding="false">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_classes"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_gravity="bottom"
+        app:cardBackgroundColor="#00A7B9"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp">
+
+     <TextView
+         android:id="@+id/tv_class_count"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center"
+         android:paddingEnd="24dp"
+         android:text="0 Kelas"
+         android:textColor="#FFEEE9"
+         android:textSize="24sp"
+         android:textStyle="bold" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="4dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Tactics board"
+        android:elevation="8dp"
+        android:scaleType="fitCenter"
+        android:translationZ="8dp"
+        android:src="@drawable/tactics_board" />
+
+   </FrameLayout>
+
+   <Space
+       android:layout_width="20dp"
+       android:layout_height="1dp" />
+
+   <FrameLayout
+       android:layout_width="0dp"
+       android:layout_height="90dp"
+       android:layout_weight="1"
+       android:clipChildren="false"
+       android:clipToPadding="false">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_students"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_gravity="bottom"
+        app:cardBackgroundColor="#007C8A"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp">
+
+     <TextView
+         android:id="@+id/tv_student_count"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center"
+         android:paddingEnd="24dp"
+         android:text="0 Siswa"
+         android:textColor="#FFEEE9"
+         android:textSize="24sp"
+         android:textStyle="bold" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="-2dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Soccer ball"
+        android:elevation="8dp"
+        android:scaleType="fitCenter"
+        android:translationZ="8dp"
+        android:src="@drawable/soccer_ball_design" />
+
+   </FrameLayout>
+
+  </LinearLayout>
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="170dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/bg_cta_orange">
+
+   <!-- Konten kiri -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:gravity="start"
+       android:paddingStart="22dp"
+       android:paddingTop="20dp"
+       android:paddingEnd="125dp"
+       android:paddingBottom="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ayo Pantau&#10;Latihannya!"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Sempurna untuk pelatihan waktu nyata!&#10;Biarkan kamera melacak setiap gerakan&#10;secara instan."
+        android:textColor="#EAEBED"
+        android:textSize="9sp"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_camera"
+        android:layout_width="145dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:minHeight="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Mulai Latihan"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_orange"
+        android:textSize="11sp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="24dp" />
+
+   </LinearLayout>
+
+   <!-- Ilustrasi guru -->
+   <ImageView
+       android:layout_width="122dp"
+       android:layout_height="122dp"
+       android:layout_gravity="end|bottom"
+       android:layout_marginEnd="8dp"
+       android:layout_marginBottom="7dp"
+       android:adjustViewBounds="true"
+       android:contentDescription="Guru membawa tablet"
+       android:scaleType="fitCenter"
+       android:src="@drawable/coach_with_tablet" />
+
+  </FrameLayout>
+  <FrameLayout android:layout_width="match_parent" android:layout_height="178dp" android:layout_marginTop="16dp" android:background="@drawable/bg_cta_blue">
+   <LinearLayout android:layout_width="238dp" android:layout_height="match_parent" android:orientation="vertical" android:paddingStart="24dp" android:paddingTop="22dp" android:paddingEnd="8dp"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tingkatkan Permainan dengan AI" android:textColor="@color/white" android:textSize="19sp" android:textStyle="bold"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Analisis video latihan siswa langsung di perangkat, aman dan tetap offline." android:textColor="#EAEBED" android:textSize="10sp"/><com.google.android.material.button.MaterialButton android:id="@+id/btn_video" android:layout_width="168dp" android:layout_height="38dp" android:layout_marginTop="12dp" android:text="Import Video" android:textAllCaps="false" android:textColor="@color/info_blue_dark" android:textSize="12sp" app:backgroundTint="@color/white" app:cornerRadius="24dp" app:icon="@drawable/ic_video" app:iconTint="@color/info_blue_dark"/></LinearLayout>
+   <ImageView android:layout_width="116dp" android:layout_height="116dp" android:layout_gravity="end|center_vertical" android:layout_marginEnd="18dp" android:adjustViewBounds="true" android:contentDescription="Gawang sepak bola" android:scaleType="fitCenter" android:src="@drawable/goal_post"/>
+  </FrameLayout>
+ </LinearLayout>
+</ScrollView>
